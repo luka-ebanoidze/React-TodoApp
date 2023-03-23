@@ -1,19 +1,68 @@
 .todo {
-    background-color: rgb(91, 91, 221);
+    background-color: white;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    padding: 5px 10px;
 }
 
 .title {
     width: 80%;
     height: 50px;
-    border: 2px solid blue;
+
+    background-color: gray;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.green {
+    background-color: green;
+}
+
+.title:hover {
+    cursor: pointer;
+}
+
+.title input {
+    width: 80%;
+    height: 35px;
+
+    padding: 0 10px;
+}
+
+.title input:focus {
+    outline: none;
 }
 
 .buttons {
     width: 20%;
     display: flex;
     justify-content: space-around;
+}
+
+.buttons button {
+    padding: 15px 17px;
+    font-size: 15px;
+
+    border-radius: 10px;
+    border: none;
+}
+
+.remove-btn {
+    background-color: red;
+    color: white;
+
+    /* padding: 15px 17px; */
+}
+
+.edit-btn {
+    background-color: orange;
+}
+
+.save-btn {
+    background-color: green;
 }
