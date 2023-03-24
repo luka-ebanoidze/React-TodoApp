@@ -1,0 +1,15 @@
+.todo {
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px 10px;
+}
+
+.buttons {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+}

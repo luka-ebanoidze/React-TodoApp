@@ -1,0 +1,25 @@
+.title {
+    width: 80%;
+    height: 50px;
+
+    background-color: gray;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title:hover {
+    cursor: pointer;
+}
+
+.title input {
+    width: 80%;
+    height: 35px;
+
+    padding: 0 10px;
+}
+
+.title input:focus {
+    outline: none;
+}

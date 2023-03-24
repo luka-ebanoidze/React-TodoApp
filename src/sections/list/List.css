@@ -1,0 +1,12 @@
+.todo__list {
+    height: 615px;
+    overflow-y: scroll;
+
+    border: 3px solid rgb(69, 69, 240);
+
+    background-color: white;
+
+    border-radius: 0 0 5px 5px;
+
+    padding: 5px 0;
+}

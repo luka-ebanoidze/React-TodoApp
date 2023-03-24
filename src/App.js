@@ -6,7 +6,8 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { Todo } from "./componenets/Todo";
+import { List } from "./sections/list/List";
+import { Form } from "./sections/form/Form";
 
 function App() {
   const errorToast = (text) => {
@@ -74,12 +75,9 @@ function App() {
         ];
       });
       axios.post("https://jsonplaceholder.typicode.com/todos", {
-        id: todos.length + 1,
         title: currentTodo,
-        completed: false,
       })
       .then((res) => {
-        console.log(currentTodo);
         addToast()
         console.log(res);
       });
@@ -89,8 +87,8 @@ function App() {
     } else errorToast('Type Something');
   };
 
-  const handleRemove = (title, id) => {
-    const new_todos = todos.filter((todo) => todo.title !== title);
+  const handleRemove = (id) => {
+    const new_todos = todos.filter((todo) => todo.id !== id);
     setTodos(new_todos);
  
      axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
@@ -113,29 +111,8 @@ function App() {
       <div>
         <ToastContainer />
       </div>
-      <form name="create-todo" className="todoform" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={currentTodo}
-          placeholder="Todo title"
-          onChange={(e) => setcurrentTodo(e.target.value)}
-        />
-        <button type="submit">+</button>
-      </form>
-      <main className="todos-block">
-      {todos.map((todo) => {
-        return (
-          <Todo
-            key={todo.title}
-            id={todo.id}
-            title={todo.title}
-            handleRemove={handleRemove}
-            handleEdit={handleEdit}
-          />
-        );
-      })}
-      </main>
-      
+      <Form handleSubmit={handleSubmit} setcurrentTodo={setcurrentTodo} currentTodo={currentTodo} />
+      <List todos={todos} handleRemove={handleRemove} handleEdit={handleEdit} />
     </div>
   );
 }
